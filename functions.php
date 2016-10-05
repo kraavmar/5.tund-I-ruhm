@@ -117,6 +117,30 @@
 	echo "<br>";
 	echo hello ("Romil", "R.");
 	*/
+	
+	
+	/*
+	
+	function issetAndNotEmpty($var) {	
+		if ( isset ( $var ) ) {
+			if ( !empty ($var ) ) {
+				return true;			
+			}	
+		} 
+		
+		return false;	
+	}
+	
+	if (issetAndNotEmpty($_POST["loginEmail"])) {
+		
+		//vastab tõele
+		
+	}
+	
+	
+	
+	
+	*/
 
 
 ?>
