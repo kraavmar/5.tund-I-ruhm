@@ -1,7 +1,6 @@
 <?php
 	
 	//võtab ja kopeerib faili sisu
-	require("../../../config.php");
 	require("functions.php");
 	
 	//kas kasutaja on sisse logitud

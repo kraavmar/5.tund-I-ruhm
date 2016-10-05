@@ -18,7 +18,16 @@
 		
 	}
 	
-
+	// ei ole tühjad väljad mida salvestada
+	if ( isset($_POST["gender"]) &&
+		 isset($_POST["color"]) &&
+		 !empty($_POST["gender"]) &&
+		 !empty($_POST["color"])
+	  ) {
+		
+		savePeople($_POST["gender"], $_POST["color"]);
+	}
+	
 ?>
 <h1>Data</h1>
 <p>

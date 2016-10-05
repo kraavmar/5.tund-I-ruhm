@@ -1,6 +1,7 @@
 <?php
 	
 	//functions.php
+	require("../../../config.php");
 	
 	//alustan sessiooni, et saaks kasutada
 	//$_SESSSION muutujaid
