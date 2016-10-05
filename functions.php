@@ -88,7 +88,6 @@
 	}
 	
 	
-	
 	function savePeople ($gender, $color) {
 		
 		$mysqli = new mysqli($GLOBALS["serverHost"],$GLOBALS["serverUsername"],$GLOBALS["serverPassword"],$GLOBALS["database"]);
@@ -107,7 +106,41 @@
 	}
 	
 	
-	
+	function getAllPeople () {
+		
+		$mysqli = new mysqli($GLOBALS["serverHost"],$GLOBALS["serverUsername"],$GLOBALS["serverPassword"],$GLOBALS["database"]);
+
+		$stmt = $mysqli->prepare("
+			SELECT id, gender, color, created
+			FROM clothingOnTheCampus
+		");
+		echo $mysqli->error;
+		
+		$stmt->bind_result($id, $gender, $color, $created);
+		$stmt->execute();
+		
+		// array("Romil", "R")
+		$result = array();
+		
+		// seni kuni on üks rida andmeid saada (10 rida = 10 korda)
+		while ($stmt->fetch()) {
+			
+			$person = new StdClass();
+			$person->id = $id;
+			$person->gender = $gender;
+			$person->clothingColor = $color;
+			$person->created = $created;
+			
+			//echo $color."<br>";
+			array_push($result, $person);
+		}
+		
+		$stmt->close();
+		$mysqli->close();
+		
+		return $result;
+		
+	}
 	
 	
 	
