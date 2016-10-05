@@ -90,6 +90,8 @@
 				$html .= "<td style=' background-color:".$p->clothingColor."; '>"
 						.$p->clothingColor
 						."</td>";
+				//<img width="200" src=' ".$url." '>
+						
 				$html .= "<td>".$p->created."</td>";
 			$html .= "</tr>";	
 		}
