@@ -7,6 +7,7 @@
 	if (isset ($_SESSION["userId"])) {
 		
 		header("Location: data.php");
+		exit();
 		
 	}
 
@@ -90,6 +91,9 @@
 		
 		//echo $serverPassword;
 		
+		$signupEmail = cleanInput($signupEmail);
+		$password = cleanInput($password);
+		
 		signup($signupEmail, $password);
 	   
 	   
@@ -103,6 +107,9 @@
 		 !empty($_POST["loginEmail"]) &&
 		 !empty($_POST["loginPassword"])
 	  ) {
+		  
+		$_POST["loginEmail"] = cleanInput($_POST["loginEmail"]);
+		$_POST["loginPassword"] = cleanInput($_POST["loginPassword"]);
 		
 		//login sisse
 		$error = login($_POST["loginEmail"], $_POST["loginPassword"]);

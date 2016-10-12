@@ -6,8 +6,10 @@
 	if (!isset ($_SESSION["userId"])) {
 		
 		header("Location: login.php");
+		exit();
 		
 	}
+	
 	
 	//kas ?logout on aadressireal
 	if (isset($_GET["logout"])) {
@@ -15,6 +17,7 @@
 		session_destroy();
 		
 		header("Location: login.php");
+		exit();
 		
 	}
 	
@@ -25,7 +28,9 @@
 		 !empty($_POST["color"])
 	  ) {
 		
-		savePeople($_POST["gender"], $_POST["color"]);
+		$gender = cleanInput($_POST["gender"]);
+		
+		savePeople($gender, cleanInput($_POST["color"]));
 	}
 	
 	$people = getAllPeople();
