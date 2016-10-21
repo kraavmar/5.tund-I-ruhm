@@ -35,9 +35,27 @@
 	
 	$people = getAllPeople();
 	
-	//echo "<pre>";
-	//var_dump($people);
-	//echo "</pre>";
+	$subject = "123 123 123";
+	echo $subject;
+	echo "<br>";
+	$output = str_replace(" ", "", $subject);
+	echo $output;
+	echo "<br>";
+	// trim($str)-  only whitespace from the beginning and end. 
+	$meil= "    marIaNn@tlu.ee    ";
+	echo $meil;
+	echo "<br>";
+	echo (trim($meil));
+	echo  "<br>";
+	$str = "Is your name O\'reilly?";
+	echo $str;
+	echo  "<br>";
+	echo stripslashes($str); // function removes /
+	echo  "<br>";
+	$str = "This is some <b>bold</b> text.";
+	echo $str;
+	echo  "<br>";
+	echo htmlspecialchars($str); //The htmlspecialchars() function converts some predefined characters to HTML entities
 	
 	
 ?>

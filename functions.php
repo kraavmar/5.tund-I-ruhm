@@ -1,7 +1,7 @@
 <?php
 	
 	//functions.php
-	require("../../../config.php");
+	require("../../config.php");
 	
 	//alustan sessiooni, et saaks kasutada
 	//$_SESSSION muutujaid
@@ -13,7 +13,7 @@
 	//$name = "romil";
 	//var_dump($GLOBALS);
 	
-	$database = "if16_romil";
+	$database = "if16_marikraav";
 	
 	function signup ($email, $password) {
 		
